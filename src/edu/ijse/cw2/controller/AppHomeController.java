@@ -37,8 +37,11 @@ public class AppHomeController {
     }
 
     @FXML
-    void btnMembersOnAction(ActionEvent event) {
-        System.out.println("Members button clikked");
+    void btnMembersOnAction(ActionEvent event) throws IOException {
+        this.root.getChildren().clear();
+        URL resource = this.getClass().getResource("/edu/ijse/cw2/view/Member.fxml");
+        Parent node = FXMLLoader.load(resource);
+        this.root.getChildren().add(node);
     }
     
 }
