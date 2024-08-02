@@ -19,8 +19,11 @@ public class AppHomeController {
     }
 
     @FXML
-    void btnBookCategoryOnAction(ActionEvent event) {
-        System.out.println("BookCategory button clikked");
+    void btnBookCategoryOnAction(ActionEvent event) throws IOException {
+        this.root.getChildren().clear();
+        URL resource = this.getClass().getResource("/edu/ijse/cw2/view/BookCategory.fxml");
+        Parent node = FXMLLoader.load(resource);
+        this.root.getChildren().add(node);
     }
 
     @FXML
