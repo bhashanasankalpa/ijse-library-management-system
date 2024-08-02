@@ -11,7 +11,7 @@ public class BookCategoryDaoImpl implements BookCategoryDao{
 
     @Override
     public boolean create(BookCategoryEntity t) throws Exception {
-        return CrudUtil.executeUpdate("INSERT INTO BookCategory Values(?,?);", t.getCategoryId(),t.getCategoryName());
+        return CrudUtil.executeUpdate("INSERT INTO BookCategory Values(?,?)", t.getCategoryId(),t.getCategoryName());
     }
 
     @Override

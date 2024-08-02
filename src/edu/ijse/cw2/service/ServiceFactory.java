@@ -1,6 +1,7 @@
 package edu.ijse.cw2.service;
 
 import edu.ijse.cw2.service.custom.impl.BookCategoryServiceImpl;
+import edu.ijse.cw2.service.custom.impl.MemberServiceImpl;
 
 public class ServiceFactory {
     private static ServiceFactory serviceFactory;
@@ -20,12 +21,15 @@ public class ServiceFactory {
             case BOOKCATEGORY:
                 return new BookCategoryServiceImpl();
 
+            case MEMBER:
+                return new MemberServiceImpl();
+
             default:
                 return null;
         }
     }
 
     public enum ServiceType {
-        BOOKCATEGORY
+        BOOKCATEGORY,MEMBER
     }
 }
