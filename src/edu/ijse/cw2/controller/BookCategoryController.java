@@ -64,8 +64,8 @@ public class BookCategoryController {
     void btnDeleteBookCategoryOnAction(ActionEvent event) {
         try {
             String categoryId=txtCategoryId.getText();
-            delete(categoryId);
-            new Alert(Alert.AlertType.CONFIRMATION, "Succesfully delete Book Category").show();
+            String resp= delete(categoryId);
+            new Alert(Alert.AlertType.CONFIRMATION, resp).show();
             clearForm();
             loadTable();
         } catch (Exception e) {
@@ -77,8 +77,8 @@ public class BookCategoryController {
     void btnSaveBookCategoryOnAction(ActionEvent event) {
         try {
             bookCategoryDto = new BookCategoryDto(txtCategoryId.getText(), txtCategoryName.getText());
-            save(bookCategoryDto);
-            new Alert(Alert.AlertType.CONFIRMATION, "Succesfully Saved Book Category").show();
+            String resp= save(bookCategoryDto);
+            new Alert(Alert.AlertType.CONFIRMATION, resp).show();
             clearForm();
             loadTable();
         } catch (Exception e) {
@@ -89,11 +89,10 @@ public class BookCategoryController {
 
     @FXML
     void btnUpdateBookCategoryOnAction(ActionEvent event) {
-        System.out.println("UpdateBookCategory button Clicked");
         try {
             BookCategoryDto bookCategoryDto = new BookCategoryDto(txtCategoryId.getText(), txtCategoryName.getText());
-            update(bookCategoryDto);
-            new Alert(Alert.AlertType.CONFIRMATION, "Succesfully update Book Category").show();
+            String resp =update(bookCategoryDto);
+            new Alert(Alert.AlertType.CONFIRMATION, resp).show();
             clearForm();
             loadTable();
         } catch (Exception e) {
