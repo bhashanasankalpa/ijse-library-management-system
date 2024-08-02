@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="692.0" style="-fx-background-color: #fef9ef;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.cw2.controller.MemberController">
+   <children>
+      <Label alignment="CENTER" prefHeight="59.0" prefWidth="692.0" style="-fx-background-color: #8ac926;" text="Members" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblMembers" layoutX="208.0" layoutY="116.0" onMouseClicked="#getItem" prefHeight="273.0" prefWidth="479.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="69.99995422363281" text="Member ID" />
+            <TableColumn fx:id="colName" prefWidth="117.3333740234375" text="Member Name" />
+            <TableColumn fx:id="colEmail" prefWidth="90.66668701171875" text="Email" />
+            <TableColumn fx:id="colPhone" prefWidth="100.66659545898438" text="Phone" />
+            <TableColumn fx:id="colAddress" prefWidth="100.66668701171875" text="Address" />
+         </columns>
+      </TableView>
+      <JFXButton layoutX="592.0" layoutY="84.0" onAction="#btnHomeOnAction" style="-fx-background-color: #5fa8d3;" text="Back to Home">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="532.0" layoutY="407.0" onAction="#btnSaveMembersOnAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #8ac926;" text="Save Members" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtMemberId" layoutX="14.0" layoutY="136.0" prefHeight="30.0" prefWidth="179.0" promptText="Member ID" />
+      <TextField fx:id="txtMemberName" layoutX="14.0" layoutY="188.0" prefHeight="30.0" prefWidth="179.0" promptText="Member Name" />
+      <TextField fx:id="txtEmail" layoutX="14.0" layoutY="241.0" prefHeight="30.0" prefWidth="179.0" promptText="Email" />
+      <TextField fx:id="txtPhone" layoutX="14.0" layoutY="292.0" prefHeight="30.0" prefWidth="179.0" promptText="Phone" />
+      <TextField fx:id="txtAddress" layoutX="14.0" layoutY="339.0" prefHeight="30.0" prefWidth="179.0" promptText="Address" />
+      <JFXButton layoutX="365.0" layoutY="407.0" onAction="#btnUpdateMembersOnAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #8ac926;" text="Update Members" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="196.0" layoutY="407.0" onAction="#btnDeleteMembersOnAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #8ac926;" text="Delete Members" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
