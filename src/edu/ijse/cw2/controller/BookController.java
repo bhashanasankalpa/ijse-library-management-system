@@ -3,10 +3,14 @@ package edu.ijse.cw2.controller;
 import java.io.IOException;
 import java.net.URL;
 
+import edu.ijse.cw2.dto.BookCategoryDto;
+import edu.ijse.cw2.service.ServiceFactory;
+import edu.ijse.cw2.service.custom.BookCategoryService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -15,6 +19,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class BookController {
+
+   BookCategoryService categoryService = (BookCategoryService) ServiceFactory.getInstance().getService(ServiceFactory.ServiceType.BOOKCATEGORY);
+
     @FXML
     private TableColumn<?, ?> colAuthor;
 
@@ -61,8 +68,20 @@ public class BookController {
     private AnchorPane root;
 
     @FXML
-    void btnChekCidOnAction(ActionEvent event) {
+    void btnChekCidOnAction(ActionEvent event) throws Exception {
         System.out.println("hekCid button clicked");
+       try {
+        String categoryid=txtCategoryId.getText();
+        BookCategoryDto dto = categoryService.get(categoryid);
+        if (dto!=null) {
+            lblChekCategoryDetail.setText(dto.getCategoryId()+" | "+dto.getCategoryName());
+        }else{
+            lblChekCategoryDetail.setText("Book Category Not Found");
+        }
+       } catch (Exception e) {
+        new Alert(Alert.AlertType.ERROR, "Error While searching Book Category").show();
+       }
+       
     }
 
     @FXML
