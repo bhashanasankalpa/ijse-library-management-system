@@ -1,6 +1,7 @@
 package edu.ijse.cw2.dao;
 
 import edu.ijse.cw2.dao.custom.impl.BookCategoryDaoImpl;
+import edu.ijse.cw2.dao.custom.impl.BookDaoImpl;
 import edu.ijse.cw2.dao.custom.impl.MemberDaoImpl;
 
 public class DaoFactory {
@@ -21,6 +22,9 @@ public class DaoFactory {
 
             case MEMBER:
             return new MemberDaoImpl();
+
+            case BOOK:
+            return new BookDaoImpl();
         
             default:
             return null;
@@ -28,6 +32,6 @@ public class DaoFactory {
     }
 
     public enum DaoTypes{
-        BOOKCATEGORY,MEMBER
+        BOOKCATEGORY,MEMBER,BOOK
     }
 }
