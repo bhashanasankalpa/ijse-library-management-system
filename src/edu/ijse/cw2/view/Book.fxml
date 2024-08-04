@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ijse.cw2.controller.BookController">
    <children>
       <Label alignment="CENTER" prefHeight="59.0" prefWidth="692.0" style="-fx-background-color: #ffca3a;" text="Books" textFill="WHITE">
@@ -27,7 +26,7 @@
             <TableColumn fx:id="colbookId" prefWidth="61.33332824707031" text="Book ID" />
             <TableColumn fx:id="colTitle" prefWidth="93.3333740234375" text="Title" />
             <TableColumn fx:id="colAuthor" prefWidth="75.3333740234375" text="Author" />
-            <TableColumn fx:id="colIsbn" prefWidth="77.99996948242188" text="ISBN" />
+            <TableColumn fx:id="ColISBN" prefWidth="77.99996948242188" text="ISBN" />
             <TableColumn fx:id="colPublisher" prefWidth="76.0" text="Publisher" />
             <TableColumn fx:id="colCategoryId" prefWidth="85.3333740234375" text="Category ID" />
          </columns>
